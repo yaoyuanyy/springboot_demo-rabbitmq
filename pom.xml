@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yy</groupId>
+    <artifactId>demo_springboot-rmq</artifactId>
+    <version>1.0.2-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+
+    <parent>
+        <groupId>com.yy</groupId>
+        <artifactId>demo_parent</artifactId>
+        <version>1.0.1</version>
+       <!-- <relativePath>../demo_parent</relativePath>-->
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.0-beta-7</version>
+                <configuration>
+                    <providerImplementations>
+                        <git>jgit</git>
+                    </providerImplementations>
+                    <username>skyler</username>
+                    <password>123456</password>
+                    <tagBase>${project.artifactId}-${project.version}</tagBase>
+                    <!--<goals>-f ${project.artifactId}/pom.xml deploy</goals>-->
+                    <goals>-f pom.xml deploy</goals>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-jgit</artifactId>
+                        <version>1.9.5</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>local private nexus</name>
+            <url>http://186.11.27.88:8081/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>local private nexus</name>
+            <url>http://186.11.27.88:8081/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>yy-Releases</id>
+            <name>yy-Releases</name>
+            <url>http://186.11.27.88:8081/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>yy-Snapshots</id>
+            <name>yy-Snapshots</name>
+            <url>http://186.11.27.88:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <!--maven scm配置-->
+    <scm>
+        <connection>scm:git:http://186.11.27.88:8886/skyler/my_test_springboot_rmq.git</connection>
+        <developerConnection>scm:git:http://186.11.27.88:8886/skyler/my_test_springboot_rmq.git</developerConnection>
+        <url>http://186.11.27.88:8886/skyler/my_test_springboot_rmq/tree/master</url>
+    </scm>
+
+</project>
