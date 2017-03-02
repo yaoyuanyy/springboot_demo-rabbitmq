@@ -5,8 +5,8 @@ rabbitmq: amqp-client: 3.6.5
 logback: 1.1.7
 jackson: 2.8.4
 
+#### 说明一
+这个项目是spring boot和rabbitmq的基础的集成，运行MyApp(接收者)和AppTest类(发送者)，可以看到消息收发的基本效果
 
-下面我们使用这两个项目演示利用maven插件release:prepare,release:perform打项目jar包到Nexus私库上
-前提条件：Nexus私库已经搭建好了
-假设我们用的intellij
-
+#### 说明二 
+此项目更大的意义是pom中配置了项目的从打jar到发布jar到Nexus私库的过程步骤，详情查看.pdf文档
