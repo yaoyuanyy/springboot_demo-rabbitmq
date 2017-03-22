@@ -8,7 +8,7 @@
   -->
 
 <configuration>
-	<include resource="org/springframework/boot/logging/logback/base.xml"/>
+	<!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
     <property name="LOG_PATH" value="${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}" />
 	<!-- ch.qos.logback.core.ConsoleAppender 控制台输出 -->
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
