@@ -5,9 +5,10 @@
 .mvn/
 .idea/
 .springBeans
+target/
+log/
+bin/
 */target/
 */bin/
 */log/
-*.iml
-target/
 
