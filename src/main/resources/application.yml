@@ -1,3 +1,17 @@
+spring:
+  application:
+    name: springboot_demo_rabbitmq
+
+  profiles:
+    active: dev
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
 server:
   port: 60000
 
@@ -10,13 +24,13 @@ logging:
 
 
 
-#management:
+management:
 #  security:
 #    enabled: false
 #    roles: ACTUATOR
-#  info:
-#    git:
-#      mode: full
+  info:
+    git:
+      mode: simple
 
 #endpoints:
 #  health:
