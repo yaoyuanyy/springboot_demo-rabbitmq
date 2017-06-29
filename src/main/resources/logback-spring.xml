@@ -130,7 +130,7 @@
 	    <logger name="com.gomeplus.meipro.uc.service.impl.UserService" additivity="false" level="info">
 	        <appender-ref ref="file-msg" />
 	    </logger>
-	</springProfile> 
+	</springProfile>
 	<springProfile name="pre-product">
 		<logger name="com.gomeplus.meipro.uc.service.impl.StaffInviteService" additivity="false" level="info">
 	        <appender-ref ref="file-msg" />

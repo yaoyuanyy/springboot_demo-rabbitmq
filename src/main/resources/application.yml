@@ -1,0 +1,38 @@
+server:
+  port: 60000
+
+logging:
+# 需要classpath下配置logback.xml，且logback.xml配置具体的各级别日志文件*.log
+  path: log
+  level:
+    root: info
+    org.springframework.boot: info
+
+
+
+#management:
+#  security:
+#    enabled: false
+#    roles: ACTUATOR
+#  info:
+#    git:
+#      mode: full
+
+#endpoints:
+#  health:
+#    sensitive: false
+#
+#info:
+#  app:
+#    encoding: @project.build.sourceEncoding@
+#    java:
+#      source: @java.version@
+#      target: @java.version@
+#
+#security:
+#  user:
+#    name: admin
+#    password: secret
+
+
+
