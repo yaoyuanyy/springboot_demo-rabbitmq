@@ -10,3 +10,6 @@ jackson: 2.8.4
 
 #### 说明二 
 此项目更大的意义是pom中配置了项目的从打jar到发布jar到Nexus私库的过程步骤，详情查看.pdf文档
+
+参考:
+https://juejin.im/post/5874f7492f301e00575733cd
